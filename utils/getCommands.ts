@@ -1,8 +1,7 @@
 import { APIApplicationCommandInteraction, APIInteractionResponse } from "discord-api-types/v10";
-import { NextApiResponse } from "next";
+import { SlashCommandBuilder } from "@discordjs/builders";
 import { resolve } from "path";
 import getTsFiles from "./getTsFiles";
-import { SlashCommandBuilder } from "@discordjs/builders";
 
 type commandModule = {
   execute: (interaction: APIApplicationCommandInteraction) => Promise<APIInteractionResponse>;

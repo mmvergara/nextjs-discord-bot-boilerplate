@@ -9,7 +9,7 @@ import { rawBodyToString } from "utils/body-parser";
 import { PUBLIC_KEY } from "config";
 import { verifyKey } from "discord-interactions";
 import getCommands from "utils/getCommands";
-import allowedMethod from "utils/error-handling";
+import allowedMethod from "utils/check-method";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Check method
