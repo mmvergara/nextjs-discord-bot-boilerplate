@@ -10,7 +10,7 @@ Live: https://mmv-nextjs-discord-bot-template.vercel.app/
 
 ## Documentation
 
-soon...
+[Documentation is Live!](https://mmv-docs.vercel.app/docs/category/nextjs-discord-bot-template)
 
 ## Installation
 
@@ -37,9 +37,10 @@ Alternative way of registering command in
 [Discord Documentation](https://discord.com/developers/docs/interactions/application-commands#endpoints)
 
 ### Invite your discord bot
+
 Open your deployment website and click invite to discord bot or do
 `https://discord.com/api/oauth2/authorize?client_id=<YOUR_BOT_CLIENT_ID_HERE>&permissions=277025445888&scope=bot%20applications.commands`
 
-
 ### Test your bot
+
 do `/ping` or `/help`
