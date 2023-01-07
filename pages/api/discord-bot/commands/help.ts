@@ -3,10 +3,10 @@ import {
   APIInteractionResponse,
   RESTGetAPIApplicationCommandsResult,
 } from "discord-api-types/v10";
-import { SlashCommandBuilder } from "@discordjs/builders";
-import { discord_api } from "services/discord-api";
 import { CLIENT_APPLICATION_ID } from "config";
+import { SlashCommandBuilder } from "@discordjs/builders";
 import { AxiosResponse } from "axios";
+import { discord_api } from "services/discord-api";
 
 export const register = new SlashCommandBuilder()
   .setName("help")

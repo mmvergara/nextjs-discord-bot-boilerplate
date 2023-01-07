@@ -2,7 +2,6 @@ import {
   APIApplicationCommandInteraction,
   APIInteraction,
   APIInteractionResponse,
-  APIPingInteraction,
   InteractionType,
 } from "discord-api-types/v10";
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -13,11 +12,10 @@ import getCommands from "utils/getCommands";
 import allowedMethod from "utils/error-handling";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  try {
-    // Check method
-    if (!allowedMethod(req, "POST")) throw new Error("Method not allowed");
-    console.log("INTEREACTIONS");
+  // Check method
+  if (!allowedMethod(req, "POST")) return res.status(401).end("Method not allowed");
 
+  try {
     // Verify discord request
     const signature = req.headers["x-signature-ed25519"] as string | Uint8Array | ArrayBuffer | Buffer;
     const timestamp = req.headers["x-signature-timestamp"] as string | Uint8Array | ArrayBuffer | Buffer;
@@ -50,9 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error: any) {
     console.log(error);
     console.log("SOMETHING WENT WRONG");
-    return res
-      .status(400)
-      .send({ type: 4, data: { content: "Something wen't wrong performing that command" + error.message } });
+    return res.status(400).send({ type: 4, data: { content: "Something wen't wrong performing that command" } });
   }
 }
 
