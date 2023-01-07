@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     if (!reply) throw new Error();
     return res.status(200).json(reply);
   } catch (error) {
-    return res.status(200).send({ type: 4, data: { content: "Something wen't wrong performing that command" } });
+    return res.status(500).send({ type: 4, data: { content: "Something wen't wrong performing that command" } });
   }
 }
 
