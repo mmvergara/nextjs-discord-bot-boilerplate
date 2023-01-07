@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CLIENT_APPLICATION_ID } from "config";
 import Head from "next/head";
 import { FormEvent, useState } from "react";
 
@@ -26,12 +27,11 @@ export default function Home() {
         <h1>MMV | Nextjs Discord Bot Template</h1>
         <a
           className='hoverLinks'
-          href='https://discord.com/api/oauth2/authorize?client_id=1060978886378266736&permissions=277025445888&scope=bot%20applications.commands'
+          href={`https://discord.com/api/oauth2/authorize?client_id=${CLIENT_APPLICATION_ID}&permissions=277025445888&scope=bot%20applications.commands`}
           target='_blank'
         >
           Invite Discord Bot
         </a>
-
         <form onSubmit={handleRegisterCommand}>
           <input
             type='text'
