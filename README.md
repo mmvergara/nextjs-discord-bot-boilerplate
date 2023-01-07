@@ -29,13 +29,13 @@ After that you are ready to deploy your project in platforms life [vercel](https
 
 
 ### Register Commands
-Open the your deployment URL submit the `REGISTER_COMMANDS_KEY` on the form UI to register your commands
+Open your deployment website, fill and submit the `REGISTER_COMMANDS_KEY` on the form UI to register your commands
 
 Alternative way of registering command in
 [Discord Documentation](https://discord.com/developers/docs/interactions/application-commands#endpoints)
 
 
 ### Invite your discord bot 
-
+Open your deployment website and click
 
 
