@@ -19,7 +19,7 @@ Live: https://mmv-nextjs-discord-bot-template.vercel.app/
 you can get these on your Discord > Developer > application as usual
 
 ```js
-CLIENT_APPLICATION_ID=
+NEXT_PUBLIC_CLIENT_APPLICATION_ID=
 PUBLIC_KEY=
 BOT_TOKEN=
 REGISTER_COMMANDS_KEY=
