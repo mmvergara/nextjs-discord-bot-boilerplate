@@ -1,16 +1,21 @@
-# Nextjs Discord Bot Template
 
-Release Date: January 6, 2023
+# Getting Started
+
+## About
+
 Yes, free fully functional discord bot can be made using nextjs 🤯
 
-## Demo
+- [**Add BOT to your discord Server**](https://discord.com/api/oauth2/authorize?client_id=1060978886378266736&permissions=277025445888&scope=bot%20applications.commands)
+- **https://mmv-nextjs-discord-bot-template.vercel.app/**
+- **[Github Repository](https://github.com/mmvergara/mmv-nextjs-discord-bot-template)**
+- **Deployment Date: Jan 7, 2023**
 
-Live: https://mmv-nextjs-discord-bot-template.vercel.app/
-[Add BOT to your discord Server](https://discord.com/api/oauth2/authorize?client_id=1060978886378266736&permissions=277025445888&scope=bot%20applications.commands)
+### [Documentation Link 📃](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
 
-## Documentation
+### Notable features
 
-[Documentation is Live!](https://mmv-docs.vercel.app/docs/category/nextjs-discord-bot-template)
+- VERY Easy to create slash commands
+- Performant app
 
 ## Installation
 
@@ -19,7 +24,7 @@ Live: https://mmv-nextjs-discord-bot-template.vercel.app/
 you can get these on your Discord > Developer > application as usual
 
 ```js
-NEXT_PUBLIC_CLIENT_APPLICATION_ID=
+CLIENT_APPLICATION_ID=
 PUBLIC_KEY=
 BOT_TOKEN=
 REGISTER_COMMANDS_KEY=
@@ -38,9 +43,4 @@ Alternative way of registering command in
 
 ### Invite your discord bot
 
-Open your deployment website and click invite to discord bot or do
-`https://discord.com/api/oauth2/authorize?client_id=<YOUR_BOT_CLIENT_ID_HERE>&permissions=277025445888&scope=bot%20applications.commands`
-
-### Test your bot
-
-do `/ping` or `/help`
+Open your deployment website and click "Invite Discord Bot" then your done!
