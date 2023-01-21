@@ -9,12 +9,12 @@ type commandModule = {
 };
 
 const getCommands = async () => {
-  const commandDir = resolve(process.cwd(), "pages", "api", "discord-bot", "commands");
+  const commandDir = resolve(process.cwd(), "commands");
   const commandFiles = getTsFiles(commandDir);
   const commands: { [key: string]: commandModule } = {};
   for (const file of commandFiles) {
     try {
-      const fileContents = (await import("../pages/api/discord-bot/commands/" + file)) as commandModule;
+      const fileContents = (await import("../commands/" + file)) as commandModule;
       if (fileContents) commands[file] = fileContents;
     } catch (error) {
       continue;

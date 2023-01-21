@@ -24,7 +24,7 @@ Yes, free fully functional discord bot can be made using nextjs 🤯
 you can get these on your Discord > Developer > application as usual
 
 ```js
-CLIENT_APPLICATION_ID=
+NEXT_PUBLIC_CLIENT_APPLICATION_ID=
 PUBLIC_KEY=
 BOT_TOKEN=
 REGISTER_COMMANDS_KEY=
