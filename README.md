@@ -1,6 +1,6 @@
 # Getting Started
 
-Yes, free fully functional discord bot can be made using nextjs 🤯
+Yes, free fully functional rest-api discord bot can be made using nextjs 🤯
 
 - [**Invite this Bot to your server**](https://mmv-nextjs-discord-bot-boilerplate.vercel.app/)
 - [**Documentation Link 📃**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
@@ -43,3 +43,7 @@ Alternative way of registering command in
 ### Invite your discord bot
 
 Open your deployment website and click "Invite Discord Bot" then your done!
+
+
+
+## [Adding your own Slash Commands](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
