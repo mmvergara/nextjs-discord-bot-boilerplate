@@ -1,46 +1,38 @@
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Getting Started
+## Getting Started
 
-## About
+First, run the development server:
 
-Yes, free fully functional discord bot can be made using nextjs 🤯
-
-- [**Add BOT to your discord Server**](https://discord.com/api/oauth2/authorize?client_id=1060978886378266736&permissions=277025445888&scope=bot%20applications.commands)
-- **https://mmv-nextjs-discord-bot-template.vercel.app/**
-- **[Github Repository](https://github.com/mmvergara/mmv-nextjs-discord-bot-template)**
-- **Deployment Date: Jan 7, 2023**
-
-### [Documentation Link 📃](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
-
-### Notable features
-
-- VERY Easy to create slash commands
-- Performant app
-
-## Installation
-
-### Fill out environment variables
-
-you can get these on your Discord > Developer > application as usual
-
-```js
-NEXT_PUBLIC_CLIENT_APPLICATION_ID=
-PUBLIC_KEY=
-BOT_TOKEN=
-REGISTER_COMMANDS_KEY=
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-### Deploy
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-After that you are ready to deploy your project in platforms life [vercel](https://vercel.com/)
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-### Register Commands
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Open your deployment website, fill and submit the `REGISTER_COMMANDS_KEY` on the form UI to register your commands
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Alternative way of registering command in
-[Discord Documentation](https://discord.com/developers/docs/interactions/application-commands#endpoints)
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### Invite your discord bot
+## Learn More
 
-Open your deployment website and click "Invite Discord Bot" then your done!
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

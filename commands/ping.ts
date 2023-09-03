@@ -1,9 +1,11 @@
-import { APIApplicationCommandInteraction, APIInteractionResponse } from "discord-api-types/v10";
 import { SlashCommandBuilder } from "@discordjs/builders";
+import { executeCommand } from "@/types";
 
-export const register = new SlashCommandBuilder().setName("ping").setDescription("pong's you back! (bot check)");
+export const register = new SlashCommandBuilder()
+  .setName("ping")
+  .setDescription("pong's you back! (bot check)");
 
-export const execute = async (interaction: APIApplicationCommandInteraction): Promise<APIInteractionResponse> => {
+export const execute: executeCommand = async (interaction) => {
   return {
     type: 4,
     data: {
@@ -11,11 +13,3 @@ export const execute = async (interaction: APIApplicationCommandInteraction): Pr
     },
   };
 };
-
-
-
-
-
-
-
-

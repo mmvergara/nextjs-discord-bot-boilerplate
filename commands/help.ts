@@ -1,25 +1,20 @@
-import {
-  APIApplicationCommandInteraction,
-  APIInteractionResponse,
-  RESTGetAPIApplicationCommandsResult,
-} from "discord-api-types/v10";
-import { CLIENT_APPLICATION_ID } from "config";
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { AxiosResponse } from "axios";
-import { discord_api } from "services/discord-api";
+import { fetchBotCommands } from "@/utils/discord-api";
+import type { executeCommand } from "@/types";
 
 export const register = new SlashCommandBuilder()
   .setName("help")
   .setDescription("Returns a list of registered commands");
 
-export const execute = async (interaction: APIApplicationCommandInteraction): Promise<APIInteractionResponse> => {
-  const fetchCommands = (await discord_api.get(
-    `/applications/${CLIENT_APPLICATION_ID}/commands`
-  )) as AxiosResponse<RESTGetAPIApplicationCommandsResult>;
-  const fields = fetchCommands.data.map((c) => {
+export const execute: executeCommand = async (interaction) => {
+  // Fetch the registered commands from discord api
+  const commandsList = await fetchBotCommands();
+
+  // Format
+  const fields = commandsList.data.map((c) => {
     return { name: "/" + c.name, value: c.description + "\n \u200b" };
   });
-  console.log({});
+
   return {
     type: 4,
     data: {
