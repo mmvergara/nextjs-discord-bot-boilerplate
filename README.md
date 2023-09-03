@@ -1,14 +1,9 @@
 # Getting Started
 
-## About
-
 Yes, free fully functional discord bot can be made using nextjs 🤯
 
-- **https://mmv-nextjs-discord-bot-template.vercel.app/**
-- **[Github Repository](https://github.com/mmvergara/mmv-nextjs-discord-bot-template)**
-- **Deployment Date: Jan 7, 2023**
-
-### [Documentation Link 📃](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
+- [**Invite this Bot to your server**](https://mmv-nextjs-discord-bot-boilerplate.vercel.app/)
+- [**Documentation Link 📃**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
 
 ## Installation
 
