@@ -9,7 +9,7 @@ Yes, free fully functional discord bot can be made using nextjs 🤯
 
 ### Fill out environment variables
 
-you can get these on your Discord > Developer > application as usual
+you can get these on your [**Discord > Developer**](https://discord.com/developers/applications) > application
 
 ```js
 NEXT_PUBLIC_CLIENT_APPLICATION_ID=
@@ -20,7 +20,7 @@ REGISTER_COMMANDS_KEY=
 
 ### Deploy
 
-After that you are ready to deploy your project in platforms life [vercel](https://vercel.com/)
+After that you are ready to deploy your project in platforms like [vercel](https://vercel.com/)
 
 ### Add Interaction Endpoint
 
