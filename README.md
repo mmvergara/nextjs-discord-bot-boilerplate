@@ -44,6 +44,4 @@ Alternative way of registering command in
 
 Open your deployment website and click "Invite Discord Bot" then your done!
 
-
-
 ## [Adding your own Slash Commands](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
