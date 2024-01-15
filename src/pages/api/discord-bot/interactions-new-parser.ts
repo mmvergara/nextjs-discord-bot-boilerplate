@@ -21,12 +21,17 @@ export default async function handler(
     return res.status(401).end("Method not allowed");
 
   try {
-    console.log(req.headers);
-    // Verify discord request
     const signature = req.headers["x-signature-ed25519"] as TokenHeader;
     const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
-
+    console.log("====================================");
+    console.log("Signature: ", signature);
+    console.log("====================================");
+    console.log("Timestamp: ", timestamp);
+    console.log("====================================");
     const rawBody = await rawBodyToStringTwo(req);
+    console.log("====================================");
+    console.log("Raw Body: ", rawBody);
+    console.log("====================================");
     const isValid = verifyKey(rawBody, signature, timestamp, PUBLIC_KEY);
     if (!isValid) return res.status(401).end("invalid request");
 
