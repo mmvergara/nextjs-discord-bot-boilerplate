@@ -27,6 +27,7 @@ REGISTER_COMMANDS_KEY=
     - where the current deployment is
   - ❌ Vercel
     - for some reason the `req.body` is always empty in the `interactions` route when deployed on vercel
+  - Please open up a PR if you have any other deployment options
 
 ### 3. Add Interaction Endpoint
 
