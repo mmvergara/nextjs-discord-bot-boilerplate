@@ -25,7 +25,9 @@ export default async function handler(
     // Verify discord request
     const signature = req.headers["X-Signature-Ed25519"] as string;
     const timestamp = req.headers["X-Signature-Ed25519"] as TokenHeader;
+    console.log(req.body);
     const rawBody = await rawBodyToString(req);
+    console.log(rawBody)
     const isValid = nacl.sign.detached.verify(
       Buffer.from(timestamp + rawBody),
       Buffer.from(signature, "hex"),

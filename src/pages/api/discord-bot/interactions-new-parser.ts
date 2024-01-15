@@ -23,20 +23,12 @@ export default async function handler(
   try {
     const signature = req.headers["x-signature-ed25519"] as TokenHeader;
     const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
-    console.log("====================================");
-    console.log("Signature: ", signature);
-    console.log("====================================");
-    console.log("Timestamp: ", timestamp);
-    console.log("====================================");
-    const rawBody = await rawBodyToStringTwo(req);
-    console.log("====================================");
-    console.log("Raw Body: ", rawBody);
-    console.log("====================================");
-    const isValid = verifyKey(rawBody, signature, timestamp, PUBLIC_KEY);
+ 
+    const isValid = verifyKey(JSON.stringify(req.body), signature, timestamp, PUBLIC_KEY);
     if (!isValid) return res.status(401).end("invalid request");
 
     // Parse body to get interaction data
-    const interactionNew = JSON.parse(rawBody) as APIInteraction;
+    const interactionNew = req.body as APIInteraction;
 
     // Check if the interaction type is a ping
     // PING message, respond with ACK (part of Discord's security and authorization protocol)
@@ -68,8 +60,8 @@ export default async function handler(
   }
 }
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
