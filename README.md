@@ -2,10 +2,10 @@
 
 Yes, free fully functional rest-api discord bot can be made using nextjs 🤯
 
-- [**Invite this Bot to your server**](https://mmv-nextjs-discord-bot-boilerplate.vercel.app/)
+- [**Invite this Bot to your server**](https://main.d1hgvr9oqd1hde.amplifyapp.com/)
 - [**Documentation Link 📃**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
 
-## Installation
+## 1. Installation
 
 ### Fill out environment variables
 
