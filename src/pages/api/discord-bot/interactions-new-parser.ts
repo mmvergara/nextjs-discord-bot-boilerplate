@@ -23,15 +23,16 @@ export default async function handler(
   try {
     const signature = req.headers["x-signature-ed25519"] as TokenHeader;
     const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
-    console.log(JSON.stringify(req.body))
+    console.log(JSON.stringify(req.body));
     const isValid = verifyKey(
       JSON.stringify(req.body),
       signature,
       timestamp,
       PUBLIC_KEY
     );
+    console.log(req);
     if (!isValid) {
-      console.log(req.body == typeof String);
+      console.log(req);
       console.log("INVALID REQUEST");
       return res.status(401).end("invalid request");
     }
