@@ -8,7 +8,12 @@ type commandModule = {
   register: SlashCommandBuilder;
 };
 
+let seenCommands: {
+  [key: string]: commandModule;
+} | null = null;
+
 const getCommands = async () => {
+  if (seenCommands) return seenCommands;
   const commandDir = resolve(process.cwd(), "commands");
   const commandFiles = getTsFiles(commandDir);
   const commands: { [key: string]: commandModule } = {};
@@ -22,6 +27,7 @@ const getCommands = async () => {
       continue;
     }
   }
+  seenCommands = commands;
   return commands;
 };
 
