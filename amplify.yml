@@ -6,13 +6,12 @@ frontend:
         - npm ci
     build:
       commands:
-        - env | grep -e DB_HOST -e DB_USER -e DB_PASS >> .env.production
-        - env | grep -e NEXT_PUBLIC_ >> .env.production
+        - env | grep -e NEXT_PUBLIC_CLIENT_APPLICATION_ID -e PUBLIC_KEY -e BOT_TOKEN -e REGISTER_COMMANDS_KEY >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
