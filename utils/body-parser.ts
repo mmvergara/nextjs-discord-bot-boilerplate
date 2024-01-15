@@ -15,3 +15,19 @@ export const rawBodyToString = async (req: NextApiRequest): Promise<string> => {
     });
   });
 };
+
+export const rawBodyToStringTwo = async (
+  req: NextApiRequest
+): Promise<string> => {
+  return new Promise<string>((resolve) => {
+    if (!req.body) {
+      let buffer = "";
+      req.on("data", (chunk) => {
+        buffer += chunk;
+      });
+      req.on("end", () => {
+        resolve(buffer.toString());
+      });
+    }
+  });
+};

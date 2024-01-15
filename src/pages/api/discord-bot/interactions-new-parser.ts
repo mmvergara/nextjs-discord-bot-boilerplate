@@ -4,13 +4,12 @@ import {
   APIInteractionResponse,
   InteractionType,
 } from "discord-api-types/v10";
-import nacl from "tweetnacl";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { verifyKey } from "discord-interactions";
 import { PUBLIC_KEY } from "@/config";
 import getCommands from "@/utils/getCommands";
 import allowedMethod from "@/utils/check-method";
-import { rawBodyToString } from "@/utils/body-parser";
+import { rawBodyToStringTwo } from "@/utils/body-parser";
 import { execute } from "@/commands/ping";
 type TokenHeader = string | Uint8Array | ArrayBuffer | Buffer;
 export default async function handler(
@@ -20,22 +19,16 @@ export default async function handler(
   // Check method
   if (!allowedMethod(req, "POST"))
     return res.status(401).end("Method not allowed");
+
   try {
     console.log(req.headers);
     // Verify discord request
-    const signature = req.headers["X-Signature-Ed25519"] as string;
-    const timestamp = req.headers["X-Signature-Ed25519"] as TokenHeader;
-    const rawBody = await rawBodyToString(req);
-    const isValid = nacl.sign.detached.verify(
-      Buffer.from(timestamp + rawBody),
-      Buffer.from(signature, "hex"),
-      Buffer.from(PUBLIC_KEY, "hex")
-    );
+    const signature = req.headers["x-signature-ed25519"] as TokenHeader;
+    const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
 
-    if (!isValid) {
-      return res.status(401).end("invalid request");
-    }
-    console.log("**VALID REQUEST**");
+    const rawBody = await rawBodyToStringTwo(req);
+    const isValid = verifyKey(rawBody, signature, timestamp, PUBLIC_KEY);
+    if (!isValid) return res.status(401).end("invalid request");
 
     // Parse body to get interaction data
     const interactionNew = JSON.parse(rawBody) as APIInteraction;
