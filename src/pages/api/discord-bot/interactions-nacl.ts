@@ -33,6 +33,7 @@ export default async function handler(
       Buffer.from(signature, "hex"),
       Buffer.from(PUBLIC_KEY, "hex")
     );
+    
 
     if (!isValid) {
       return res.status(401).end("invalid request");
