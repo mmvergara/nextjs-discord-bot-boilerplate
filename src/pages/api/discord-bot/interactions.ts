@@ -10,7 +10,8 @@ import { PUBLIC_KEY } from "@/config";
 import getCommands from "@/utils/getCommands";
 import allowedMethod from "@/utils/check-method";
 import { rawBodyToString } from "@/utils/body-parser";
-
+import { execute } from "@/commands/ping";
+type TokenHeader = string | Uint8Array | ArrayBuffer | Buffer;
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -20,17 +21,11 @@ export default async function handler(
     return res.status(401).end("Method not allowed");
 
   try {
+    console.log(req.headers);
     // Verify discord request
-    const signature = req.headers["x-signature-ed25519"] as
-      | string
-      | Uint8Array
-      | ArrayBuffer
-      | Buffer;
-    const timestamp = req.headers["x-signature-timestamp"] as
-      | string
-      | Uint8Array
-      | ArrayBuffer
-      | Buffer;
+    const signature = req.headers["x-signature-ed25519"] as TokenHeader;
+    const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
+
     const rawBody = await rawBodyToString(req);
     const isValid = verifyKey(rawBody, signature, timestamp, PUBLIC_KEY);
     if (!isValid) return res.status(401).end("invalid request");
@@ -45,16 +40,16 @@ export default async function handler(
 
     // If the interaction type is not a ping it is assumed to be a application command
     const interaction = interactionNew as APIApplicationCommandInteraction;
-    console.log(interaction)
+
     // get all commands
     const allCommands = await getCommands();
 
     // execute command
     let reply: APIInteractionResponse | null = null;
-    const commandName = interaction.data.name + ".ts";
-    if (allCommands[commandName]) {
-      reply = await allCommands[commandName].execute(interaction);
-    }
+    // const commandName = interaction.data.name + ".ts";
+    // if (allCommands[commandName]) {
+      reply = await execute(interaction);
+    // }
 
     if (!reply) throw new Error();
     return res.status(200).json(reply);
