@@ -23,9 +23,18 @@ export default async function handler(
   try {
     const signature = req.headers["x-signature-ed25519"] as TokenHeader;
     const timestamp = req.headers["x-signature-timestamp"] as TokenHeader;
- 
-    const isValid = verifyKey(JSON.stringify(req.body), signature, timestamp, PUBLIC_KEY);
-    if (!isValid) return res.status(401).end("invalid request");
+    console.log(JSON.stringify(req.body))
+    const isValid = verifyKey(
+      JSON.stringify(req.body),
+      signature,
+      timestamp,
+      PUBLIC_KEY
+    );
+    if (!isValid) {
+      console.log(req.body == typeof String);
+      console.log("INVALID REQUEST");
+      return res.status(401).end("invalid request");
+    }
 
     // Parse body to get interaction data
     const interactionNew = req.body as APIInteraction;
