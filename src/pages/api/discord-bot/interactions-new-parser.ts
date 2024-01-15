@@ -55,7 +55,7 @@ export default async function handler(
     let reply: APIInteractionResponse | null = null;
     const commandName = interaction.data.name + ".ts";
     if (allCommands[commandName]) {
-    reply = await execute(interaction);
+      reply = await allCommands[commandName].execute(interaction);
     }
 
     if (!reply) throw new Error();
