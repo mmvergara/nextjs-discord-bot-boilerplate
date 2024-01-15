@@ -5,24 +5,30 @@ Yes, free fully functional rest-api discord bot can be made using nextjs 🤯
 - [**Invite this Bot to your server**](https://main.d1hgvr9oqd1hde.amplifyapp.com/)
 - [**Documentation Link 📃**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
 
-## 1. Installation
+### 1. Installation
 
-### Fill out environment variables
-
-you can get these on your [**Discord > Developer**](https://discord.com/developers/applications) > application
+- Clone Repository
+- Fill out environment variables
+  - you can get these on your [**Discord > Developer > Application**](https://discord.com/developers/applications)
 
 ```js
 NEXT_PUBLIC_CLIENT_APPLICATION_ID=
 PUBLIC_KEY=
 BOT_TOKEN=
+
+//  This is the key to register your commands, you can set this to anything make sure it is secure
 REGISTER_COMMANDS_KEY=
 ```
 
-### Deploy
+### 2. Deploy
 
-After that you are ready to deploy your project in platforms like [vercel](https://vercel.com/)
+- Where to deploy?
+  - ✅ AWS Amplify
+    - where the current deployment is
+  - ❌ Vercel
+    - for some reason the `req.body` is always empty in the `interactions` route when deployed on vercel
 
-### Add Interaction Endpoint
+### 3. Add Interaction Endpoint
 
 After deploying you will have your url
 
@@ -31,17 +37,20 @@ After deploying you will have your url
   ![Add Intercation Endpoint URL](https://github.com/mmvergara/nextjs-discord-bot-boilerplate/assets/104471209/8e83108c-058c-41a6-afd6-924d18baef2f)
 
 - Example
-  > https://mmv-nextjs-discord-bot-boilerplate.vercel.app/api/discord-bot/interactions
+  > https://main.d1hgvr9oqd1hde.amplifyapp.com/api/discord-bot/interactions
 
-### Register Commands
+### 4. Register Commands
 
-Open your deployment website, fill and submit the `REGISTER_COMMANDS_KEY` on the form UI to register your commands
+Open your deployment website, fill and submit the `REGISTER_COMMANDS_KEY` you set earlier in the environment variables to register your commands.
 
-Alternative way of registering command in
-[Discord Documentation](https://discord.com/developers/docs/interactions/application-commands#endpoints)
+_Alternative way of registering command in
+[Discord Documentation](https://discord.com/developers/docs/interactions/application-commands#endpoints)_
 
-### Invite your discord bot
+### 5. Invite your discord bot
 
-Open your deployment website and click "Invite Discord Bot" then your done!
+- Open your deployment website and click "Invite Discord Bot" then your done!
+  - the link has the necessary required permissions to run the bot
 
-## [Adding your own Slash Commands](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
+### 6. Adding your own Slash Commands
+
+- [Documentation](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
