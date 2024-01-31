@@ -17,7 +17,7 @@ export async function GET(req: Request) {
         );
 
         const registerCommands = await discord_api.put(
-            `/applications/${CLIENT_APPLICATION_ID}/commands`,
+            `/applications/${process.env.NEXT_PUBLIC_APPLICATION_ID!}/commands`,
             arrayOfSlashCommandsRegisterJSON
         );
 

@@ -15,6 +15,6 @@ export const discord_api = axios.create({
 
 export const fetchBotCommands = async () => {
   return (await discord_api.get(
-    `/applications/${CLIENT_APPLICATION_ID}/commands`
+    `/applications/${process.env.CLIENT_ID}/commands`
   )) as AxiosResponse<RESTGetAPIApplicationCommandsResult>;
 };

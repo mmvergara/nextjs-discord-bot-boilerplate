@@ -1,4 +1,5 @@
 "use client";
+import { CLIENT_APPLICATION_ID } from "@/config";
 import axios from "axios";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
@@ -50,7 +51,7 @@ export default function Home() {
         </form>
         <Link
           className="hoverLinks"
-          href={`https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID!}&permissions=2147483648&scope=bot`}
+          href={`https://discord.com/api/oauth2/authorize?client_id=${CLIENT_APPLICATION_ID}&permissions=2147483648&scope=bot`}
           target="_blank"
         >
           Invite Discord Bot
