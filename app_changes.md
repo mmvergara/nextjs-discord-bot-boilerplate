@@ -19,4 +19,3 @@
 
 - each folder structure to end with a `route.ts`
 - all routes return a `Response` or `NextResponse` as required in all branches of your handler
-- 

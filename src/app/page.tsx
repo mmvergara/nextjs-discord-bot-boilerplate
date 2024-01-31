@@ -1,5 +1,7 @@
 "use client";
+// import { CLIENT_ID } from "@/config";
 import axios from "axios";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 export default function Home() {
@@ -9,11 +11,13 @@ export default function Home() {
     const handleRegisterCommand = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        const requestLink = '/api/discord-bot/register-commands?REGISTER_COMMANDS_KEY=' + registerCommandsKey;
+
         try {
             setStatus("Loading...");
             if (registerCommandsKey.length > 0) {
                 await axios.get(
-                    `/api/discord-bot/register-commands?REGISTER_COMMANDS_KEY=${registerCommandsKey}`
+                    requestLink
                 ).catch((err) => console.log(err))
             }
             setStatus("Commands registered!");
@@ -29,12 +33,12 @@ export default function Home() {
         <a href="https://github.com/mmvergara/">
           Template By: Mark Matthew Vergara
         </a>
-        <a
+        <Link
           href="https://github.com/mmvergara/mmv-nextjs-discord-bot-template"
           target="_blank"
         >
           Github Repository
-        </a>
+        </Link>
 
         <form onSubmit={handleRegisterCommand}>
           <input
@@ -45,13 +49,13 @@ export default function Home() {
           />
           <button disabled={registerCommandsKey.length < 1} type="submit">Register Commands</button>
         </form>
-        <a
+        <Link
           className="hoverLinks"
-          href={`https://discord.com/api/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_CLIENT_APPLICATION_ID}&permissions=277025445888&scope=bot%20applications.commands`}
+          href={`https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID!}&permissions=2147483648&scope=bot`}
           target="_blank"
         >
           Invite Discord Bot
-        </a>
+        </Link>
 
         <p style={{ paddingTop: 30 }}>{status}</p>
         </main>

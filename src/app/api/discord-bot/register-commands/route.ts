@@ -4,9 +4,11 @@ import getCommands from '@/utils/getCommands';
 import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: Request) {
     try {
-        if (!req.query.REGISTER_COMMANDS_KEY)
+
+
+        if (!req.url.endsWith(REGISTER_COMMANDS_KEY))
             throw new Error("Register commands key was invalid!");
         const allCommands = await getCommands();
         const arrayOfSlashCommandsRegister = Object.values(allCommands);
@@ -25,7 +27,7 @@ export async function GET(req: NextApiRequest) {
 
         return NextResponse.json({ error: null });
     } catch (error) {
-        console.log(error);
+        console.error(error);
 
         return NextResponse.json({
             error: "Error occured"
