@@ -6,7 +6,7 @@ if (!process.env.REGISTER_COMMANDS_KEY)
   throw new Error("REGISTER_COMMANDS_KEY is not set");
 
 export const CLIENT_APPLICATION_ID =
-  process.env.NEXT_PUBLIC_CLIENT_APPLICATION_ID;
-export const BOT_TOKEN = process.env.BOT_TOKEN;
-export const PUBLIC_KEY = process.env.PUBLIC_KEY;
+  process.env.NEXT_PUBLIC_CLIENT_APPLICATION_ID!;
+export const BOT_TOKEN = process.env.BOT_TOKEN!;
+export const PUBLIC_KEY = process.env.PUBLIC_KEY!;
 export const REGISTER_COMMANDS_KEY = process.env.REGISTER_COMMANDS_KEY!;

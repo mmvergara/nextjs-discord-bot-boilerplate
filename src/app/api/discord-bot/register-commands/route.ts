@@ -1,7 +1,6 @@
-import { CLIENT_APPLICATION_ID, REGISTER_COMMANDS_KEY } from '@/config';
+import { REGISTER_COMMANDS_KEY } from '@/config';
 import { discord_api } from '@/utils/discord-api';
 import getCommands from '@/utils/getCommands';
-import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
