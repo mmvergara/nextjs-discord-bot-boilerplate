@@ -1,5 +1,5 @@
 import { RESTGetAPIApplicationCommandsResult } from "discord.js";
-import { BOT_TOKEN, CLIENT_APPLICATION_ID } from "../config";
+import { BOT_TOKEN } from "../config";
 import axios, { AxiosResponse } from "axios";
 
 export const discord_api = axios.create({
@@ -15,6 +15,6 @@ export const discord_api = axios.create({
 
 export const fetchBotCommands = async () => {
   return (await discord_api.get(
-    `/applications/${process.env.CLIENT_ID}/commands`
+    `/applications/${process.env.NEXT_PUBLIC_APPLICATION_ID!}/commands`
   )) as AxiosResponse<RESTGetAPIApplicationCommandsResult>;
 };
