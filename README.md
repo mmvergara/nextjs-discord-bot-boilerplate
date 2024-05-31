@@ -33,7 +33,8 @@ REGISTER_COMMANDS_KEY=
 
 ### 2. Adding your own Slash Commands
 
-- [Documentation](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
+- Just go to `./commands/tutorialhere.ts` after cloning and you will see the template for creating a command
+  - [In-Depth - Documentation](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-boilerplate/adding-slash-commands)
 
 ### 3. Deploy
 
