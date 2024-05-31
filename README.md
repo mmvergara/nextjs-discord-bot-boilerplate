@@ -1,12 +1,12 @@
 # NextJS Discord Bot
 
----
-
 <p align="center"><img src="/public/logo.svg" width="300"></p>
 
-# Getting Started
 
 Yes, free fully functional rest-api discord bot can be made using nextjs 🤯
+
+
+# Getting Started
 
 - [**Invite this Bot to your server**](https://main.d1hgvr9oqd1hde.amplifyapp.com/)
 - [**Documentation Link 📃**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
