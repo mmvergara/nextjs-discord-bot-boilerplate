@@ -36,7 +36,7 @@ export default function Home() {
           Nextjs Discord Bot Boilerplate
         </h1>
         <p>{status}</p>
-        <form onSubmit={handleRegisterCommand}>
+        <form id="form-container" onSubmit={handleRegisterCommand}>
           <input
             id="register-command-input"
             type="text"
