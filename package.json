@@ -1,5 +1,7 @@
 {
   "name": "nextjs-discord-bot-boilerplate",
+  "author": "mmvergara",
+  "description": "Nextjs Discord Bot Template that easily allows you to add and manage discord slash commands.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
