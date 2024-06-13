@@ -5,10 +5,34 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nextjs Discord Bot Boilerplate",
-  description: "",
+  title: "Nextjs Discord Bot Boilerplate | Build Discord Bots with Nextjs",
+  description: "Nextjs Discord bot | Create discord bots using nextjs",
+  keywords: [
+    "nextjs",
+    "discord",
+    "bot",
+    "boilerplate",
+    "react",
+    "typescript",
+    "discord bot development",
+    "nextjs discord bot",
+    "discord bot framework",
+  ],
+  authors: [
+    {
+      name: "Mark Matthew Vergara",
+      url: "https://github.com/mmvergara",
+    },
+  ],
+  creator: "Mark Matthew Vergara",
+  publisher: "https://github.com/mmvergara",
+  openGraph: {
+    title: "Nextjs Discord Bot Boilerplate | Build Discord Bots with Nextjs",
+    description: "Nextjs Discord bot | Create discord bots using nextjs",
+    url: "https://github.com/mmvergara/nextjs-discord-bot-boilerplate",
+    type: "website",
+  },
 };
-
 export default function RootLayout({
   children,
 }: {
