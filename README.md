@@ -1,6 +1,6 @@
 # NextJS Discord Bot
 
-[**`🤖 Invite this Bot to your server`**](https://main.d1hgvr9oqd1hde.amplifyapp.com/) <br/>
+[**`🤖 Invite this Bot to your server`**](https://mmv-nextjs-discord-bot-boilerplate.vercel.app/) <br/>
 [**`📚 Documentation`**](https://mmv-docs.vercel.app/docs/nextjs-discord-bot-template/getting-started)
 
 <p align="center"><img src="/public/logo-new.svg" width="300"></p>
